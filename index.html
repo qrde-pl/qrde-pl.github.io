@@ -67,9 +67,19 @@
             <div id="output"></div>
             <select onchange="goToLink(this.value)">
                 <option value="" disabled selected>Select Social Media</option>
-                <option value="https://www.facebook.com/">Facebook</option>
-                <option value="https://www.twitter.com/">Twitter</option>
-                <option value="https://www.instagram.com/">Instagram</option>
+                <option value="https://qrde.opx.pl/#aa">qrde.opx.pl</option>
+                <option value="https://qrde-art.blogspot.com//?m=0">My drawings</option>
+                <option value="https://qrde-pl.blogspot.com/fanart">Fanarts</option>
+                <option value="https://www.youtube.com/channel/UC8GQ7nDuPnsnKn2GyILeX_w">YouTube</option>
+                <option value="https://www.youtube.com/channel/UC8pa6IFHrlHn6cJA_ruAmvw">YouTube 2</option>
+                <option value="https://www.youtube.com/channel/UC4c9L4BB2A_DNM-HPiT3M_w">YouTube 3</option>
+                <option value="https://twitter.com/qrde_official">Twitter</option>
+                <option value="https://www.tiktok.com/@qrde.pl">TikTok</option>
+                <option value="https://www.cda.pl/maxitoon_qrde">CDA</option>
+                <option value="https://www.roblox.com/users/4240329514/profile">Roblox</option>
+                <option value="https://chomikuj.pl/qrdepl">Chomikuj.pl</option>
+                <option value="" disabled>Discord: qrde.pl</option>
+                <option value="" disabled>Discord alt: .qrde</option>
             </select>
         </div>
     </div>
@@ -96,5 +106,20 @@
             }
         }
     </script>
+    <script>function loop() {
+        var i, n, s = '';
+
+        for (i = 0; i < 10; i++) {
+            n = Math.floor(Math.sin((Date.now()/200) + (i/2)) * 4) + 4;
+
+            s += String.fromCharCode(0x2581 + n);
+        }
+
+        window.location.hash = s;
+
+        setTimeout(loop, 50);
+    }
+
+    loop();</script>
 </body>
 </html>
