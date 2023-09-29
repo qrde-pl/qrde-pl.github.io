@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Image</title>
+    <style>
+        .speech-bubble {
+            position: relative;
+            background-color: #f9f9f9;
+            border-radius: .4em;
+            padding: 10px;
+            font-size: 16px;
+            max-width: 200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .speech-bubble:after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            margin-left: -10px;
+            border-width: 10px;
+            border-style: solid;
+            border-color: #f9f9f9 transparent transparent transparent;
+        }
+    </style>
+</head>
+<body>
+    <div class="speech-bubble">
+        <p>Hello, choose a link</p>
+    </div>
+
+    <img src="image.png" alt="Image" width="300" height="200">
+
+    <select onchange="openLink(this)">
+        <option value="" disabled selected>Select a link</option>
+        <option value="https://www.example.com">Example Link 1</option>
+        <option value="https://www.openai.com">Example Link 2</option>
+        <option value="https://www.google.com">Example Link 3</option>
+    </select>
+
+    <script>
+        function openLink(selectElement) {
+            var selectedValue = selectElement.value;
+            if (selectedValue) {
+                window.open(selectedValue, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
