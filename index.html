@@ -1,1 +1,100 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qrde</title>
+    <style>
+        body {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        #bubble {
+            position: relative;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+        }
+
+        #bubble::after {
+        }
+
+        select {
+            padding: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+            width: 100%;
+        }
+
+        option {
+            font-size: 16px;
+        }
+
+        #output {
+            margin-top: 10px;
+            font-size: 16px;
+            white-space: pre-line;
+            overflow: hidden;
+            border-right: 1px solid #000;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        img {
+            max-width: 100px;
+            height: auto;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="bubble">
+        <div>
+            <img src="https://i.ibb.co/VY0WW71/image-1.png" alt="Bonzi Buddy">
+        </div>
+        <div>
+            <div id="output"></div>
+            <select onchange="goToLink(this.value)">
+                <option value="" disabled selected>Select Social Media</option>
+                <option value="https://www.facebook.com/">Facebook</option>
+                <option value="https://www.twitter.com/">Twitter</option>
+                <option value="https://www.instagram.com/">Instagram</option>
+            </select>
+        </div>
+    </div>
+
+    <script>
+        const text = "Hello! I'm qrde. And here is my social medias :D";
+
+        let i = 0;
+        const output = document.getElementById('output');
+
+        function typeText() {
+            if (i < text.length) {
+                output.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(typeText, 50);
+            }
+        }
+
+        typeText();
+
+        function goToLink(url) {
+            if (url) {
+                window.open(url, '_blank');
+            }
+        }
+    </script>
+</body>
+</html>
