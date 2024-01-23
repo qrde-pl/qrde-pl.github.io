@@ -1,0 +1,36 @@
+<style>
+    body {
+      margin: 0;
+      padding: 0;
+      transition: background-color 0.5s ease;
+    }
+    .transition-button {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 15px 30px;
+      font-size: 18px;
+      cursor: pointer;
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<button class="transition-button" onclick="transitionAndRedirect()">Scratch Paint</button>
+
+<script>
+  function transitionAndRedirect() {
+    // Change the background color to white
+    document.body.style.backgroundColor = '#fff';
+
+    // Wait for the transition to complete (0.5s), then redirect to the desired site
+    setTimeout(function () {
+      window.location.href = 'https://qrde-pl.github.io/scratch-paint.html'; // Replace with your desired URL
+    }, 500);
+  }
+</script>
